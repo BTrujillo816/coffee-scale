@@ -1,18 +1,17 @@
-# Demo Project: Fitness Tracker
+# ECET 430 Project: Digital Coffee Scale
 
-This is a project to demonstrate certain items of developing a hardware/software product.
-
-The **FitT** fitness tracker is a fictional product.
+This is a project for NJIT's ECET 430 - Electronics Manufacturing class.
 
 ## Purpose
 
-The FitT fitness tracker will help you stay in shape. It is a light weight wearable design which monitors your movement and heart rate.
+This digital coffee scale will display weight measurements, flow rate, and include a built-in timer.
 
 ## Repo Layout
 
 - `hardware` KiCad project with schematic, pcb layout, plots, drawings
 - `software` STM32 firmware and MX setup
 - `documentation` Technical documentation and user manual
+- `logbook` Markdown files for progress updates
 
 ## Usage
 
