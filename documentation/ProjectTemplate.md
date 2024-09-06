@@ -2,7 +2,7 @@
 - Roles
   - Consumer
 - Budget
-- - $ 500
+  - $ 500
 
 # Communication
 - Repository: GitHub
@@ -10,15 +10,15 @@
 
 # Objectives
 - Descriptions
-- - Rectangular
-- - Displays numbers
-- - Physical interaction
-- - Makes sounds
+  - Rectangular
+  - Displays numbers
+  - Physical interaction
+  - Makes sounds
 
 # Scenario
 # # User Interaction Stories
 - Unboxing
-- - Foam to protect pressure sensor
+  - Foam to protect pressure sensor
 - Using
 - - Press button to turn on
 - - Press button to zero
