@@ -2,7 +2,7 @@
 - Roles
   - Consumer
 - Budget
-  - $ 50
+  - $ 40
 
 # Communication
 - Repository: GitHub
@@ -10,17 +10,17 @@
 
 # Objectives
 - Descriptions
-  - Triangular
-  - LED display
-  - Make sounds
-  - Pressure sensor
+  - Triangular shape PCB
+  - LED display around the perimeter
+  - Piezo buzzer to make sounds
+  - Pressure sensor to detect weight change
 
 # Scenario
 # # User Interaction Stories
 - Unboxing
-  - wrap to protect product
+  - Wrap to protect product
 - Using
-  - slide switch to turn on product
+  - Slide switch to turn on product
 - Display
   - Turns off automatically after 1 hour of no usage
 - Power
@@ -37,10 +37,11 @@
 # User Acceptance
 - Given-When-Then criteria
   - Given: Cup and product
-  - When: product detects weight change
+  - When: Product detects weight change
   - Then: Red LED lights up
 - Quantifiable Goals
-  - Pressure sensor can detect weigh change when ball goes inside cup
+  - Pressure sensor can detect weight change when ball goes inside cup
+  - Accompanying sound will go off when the pressure sensor detected the weight change
   - RED led will light up when pressure sensor detect weight change
   - Slide switch will turn on system
   - Batteries are rechargeable
@@ -96,12 +97,15 @@
   - Product cannot be sumberged in liquids
 - Set-in-stone Parameters
   - Must turn red when sensor is triggered
-  - Must reset back to green after a few seconds game is over
+  - LEDs must reset back to green after a few seconds to signify game is over
+  - Sound must be audible when product is being used
 
 ## Future
 - Open-source
 - DIY capable
-  - Order a kit and assemble it easily with/without a soldering iron
+  - PCB design can be downloaded/edited and ordered for individual use.
 
 ## Glossary
-- LED pong
+- LEDs
+- Piezo Buzzer
+- Pressure Sensor
