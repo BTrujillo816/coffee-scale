@@ -53,8 +53,8 @@
   - Waterproof
 
 ## Functions
-- Uses infrared sensor to detect ball
-- Emits a sound whenever infrared detect ball
+- Uses pressure sensor to weight change when ball goes in a cup filled with water
+- Emits a sound whenever weight change is detected
 
 ## Integration
 - Protocols
