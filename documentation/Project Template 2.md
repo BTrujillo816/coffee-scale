@@ -45,7 +45,7 @@
   - RED led will light up when pressure sensor detect weight change
   - Slide switch will turn on system
   - Batteries are rechargeable
-- On/off switch works as intended
+  - On/off switch works as intended
 
 # Parameters
 ## Technical
