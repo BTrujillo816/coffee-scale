@@ -2,7 +2,7 @@
 - Roles
   - Consumer
 - Budget
-  - $ 40
+  - $40
 
 # Communication
 - Repository: GitHub
@@ -10,15 +10,15 @@
 
 # Objectives
 - Descriptions
-  - Triangular shape PCB
+  - Triangular shaped PCB
   - LED display around the perimeter
   - Piezo buzzer to make sounds
   - Pressure sensor to detect weight change
 
 # Scenario
-# # User Interaction Stories
+## User Interaction Stories
 - Unboxing
-  - Wrap to protect product
+  - Wrapping to protect product
 - Using
   - Slide switch to turn on product
 - Display
@@ -26,7 +26,7 @@
 - Power
   - Rechargeable battery
 
-# # User Interface
+## User Interface
 - Display
   - LEDs
 - Switches
@@ -41,7 +41,7 @@
   - Then: Red LED lights up
 - Quantifiable Goals
   - Pressure sensor can detect weight change when ball goes inside cup
-  - Accompanying sound will go off when the pressure sensor detected the weight change
+  - Accompanying sound will go off when the pressure sensor detects the weight change
   - RED led will light up when pressure sensor detect weight change
   - Slide switch will turn on system
   - Batteries are rechargeable
@@ -53,7 +53,7 @@
   - Waterproof
 
 ## Functions
-- Uses pressure sensor to weight change when ball goes in a cup filled with water
+- Uses pressure sensor to detect weight change when ball goes in a cup filled with water
 - Emits a sound whenever weight change is detected
 
 ## Integration
@@ -61,7 +61,7 @@
   - I2C
 
 ## Operational
-- Don't put underwater
+- Do not submerge in water
 - Long-battery life
 - Carrying case to protect product
 
@@ -94,7 +94,7 @@
 
 ## Key Concerns
 - Most Important
-  - Product cannot be sumberged in liquids
+  - Product cannot be submerged in liquids
 - Set-in-stone Parameters
   - Must turn red when sensor is triggered
   - LEDs must reset back to green after a few seconds to signify game is over
@@ -103,7 +103,8 @@
 ## Future
 - Open-source
 - DIY capable
-  - PCB design can be downloaded/edited and ordered for individual use.
+  - PCB design can be downloaded/edited and ordered for individual use
+    - PCB has the potential to be used in single-use cups  
 
 ## Glossary
 - LEDs
