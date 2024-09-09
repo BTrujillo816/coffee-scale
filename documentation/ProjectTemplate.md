@@ -149,9 +149,18 @@
   - Order a kit and assemble it easily with/without a soldering iron
 
 ## Glossary
-- Grounds
-- Flow rate
-- Pour Over
-- Espresso
 - Brewing parameters
+  - Parameters that can be changed that affects extraction, including but not limited to flow rate, weight in grams, milliliters of water, temperature, pressure, etc.
 - Brewing vessel
+  - The container/cup that collects coffee as it is being brewed
+- Espresso
+  - A method of coffee brewing that involves extracting components of coffee using a machine that can apply high bars of pressure for extraction
+- Extraction
+  - The act of pulling soluble compounds out of coffee beans by using water
+- Flow rate
+  - The rate of water flow in grams per second
+- Grounds
+  - The state of coffee beans after grinding 
+- Pour Over
+  - A method of coffee brewing that involves pouring water from a kettle over coffee grounds as its primary extraction method
+
