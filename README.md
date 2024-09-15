@@ -4,7 +4,7 @@ This is a project for NJIT's ECET 430 - Electronics Manufacturing class.
 
 ## Purpose
 
-This digital coffee scale will display weight measurements, flow rate, and include a built-in timer.
+This digital coffee scale will display weight measurements, flow rate, and include a built-in timer. It will also be able to send brew parameters through WiFi or Bluetooth to an App or other interface.
 
 ## Repo Layout
 
