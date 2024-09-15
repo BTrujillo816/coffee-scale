@@ -29,7 +29,7 @@ flowchart TD
 - LiPo because we wanted to incorporate this type of power cell and its rechargeability
 - Chose ESP32 for its IoT capabilities i.e WiFi and Bluetooth
 - Uses an E-ink display over LCD/LED to save on power consumption
-- Uses an HX711 to interface with the load cell easily
+- Uses an HX711 to interface with the load cell easilys
 
 # Major Component Selection
 - MCP73831: https://www.digikey.com/en/products/detail/microchip-technology/MCP73831T-2ACI-OT/964301
