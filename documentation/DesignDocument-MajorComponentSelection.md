@@ -1,8 +1,8 @@
 # Major Moving Parts
 - Power
-    -Battery
-        -LIPO
-            -MCP73831-based circuit for charging
+    - Battery
+        - LIPO
+            - MCP73831-based circuit for charging
 - UI
     - Display
     - Buttons
