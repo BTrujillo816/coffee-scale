@@ -374,6 +374,422 @@
 				)
 			)
 		)
+		(symbol "Battery_Management:MCP73831-2-MC"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at -7.62 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "MCP73831-2-MC"
+				(at 1.27 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.7x1.4mm"
+				(at 1.27 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf"
+				(at -3.81 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in DFN-8 package"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "battery charger lithium"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "DFN*3x2mm*P0.5mm*EP1.7x1.4mm*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MCP73831-2-MC_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "MCP73831-2-MC_1_1"
+				(pin passive line
+					(at 0 7.62 270)
+					(length 2.54) hide
+					(name "V_{DD}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "V_{DD}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "V_{BAT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54) hide
+					(name "V_{BAT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin tri_state line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "STAT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "V_{SS}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at -7.62 2.54 0)
+					(length 2.54) hide
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "PROG"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Connector:Screw_Terminal_01x02"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Screw_Terminal_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Custom:UC8151D"
 			(pin_numbers hide)
 			(exclude_from_sim no)
@@ -2146,6 +2562,12 @@
 			)
 		)
 	)
+	(junction
+		(at 41.91 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7fc40bcf-dd10-4580-95e5-641ff80cfcb5")
+	)
 	(wire
 		(pts
 			(xy 105.41 67.31) (xy 92.71 67.31)
@@ -2165,6 +2587,16 @@
 			(type default)
 		)
 		(uuid "202c798c-423f-4f81-a8a9-6d7549efa6e6")
+	)
+	(wire
+		(pts
+			(xy 31.75 123.19) (xy 41.91 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21013cda-9328-493f-a7b2-72ddf53f3787")
 	)
 	(wire
 		(pts
@@ -2208,6 +2640,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 123.19) (xy 64.77 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6de88e67-ba04-4f4c-a7b4-24ccab088e98")
+	)
+	(wire
+		(pts
 			(xy 191.77 87.63) (xy 191.77 81.28)
 		)
 		(stroke
@@ -2245,6 +2687,84 @@
 			(type default)
 		)
 		(uuid "dd5488f7-2840-4b66-88a4-3712c4543841")
+	)
+	(wire
+		(pts
+			(xy 64.77 118.11) (xy 58.42 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef298d14-5e07-4b85-b428-c6d1f1bde3c6")
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 36.83 125.73 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0ce15607-e3bf-4010-8983-2a197bb683fa")
+		(property "Reference" "J1"
+			(at 36.83 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 36.83 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 36.83 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 36.83 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 36.83 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "dd6802d5-2d2c-4b96-ae42-00dc0e0b8e9a")
+		)
+		(pin "1"
+			(uuid "b02f7382-9ac0-48e6-b3cd-4a79420b8d0d")
+		)
+		(instances
+			(project ""
+				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
@@ -2373,6 +2893,94 @@
 			(project ""
 				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
 					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Battery_Management:MCP73831-2-MC")
+		(at 74.93 120.65 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3938fbb9-daac-4dee-8307-a0054f00f92a")
+		(property "Reference" "U4"
+			(at 92.71 112.6138 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MCP73831-2-MC"
+			(at 92.71 115.1538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DFN_QFN:DFN-8-1EP_3x2mm_P0.5mm_EP1.7x1.4mm"
+			(at 73.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://ww1.microchip.com/downloads/en/DeviceDoc/20001984g.pdf"
+			(at 78.74 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Single cell, Li-Ion/Li-Po charge management controller, 4.20V, Tri-State Status Output, in DFN-8 package"
+			(at 74.93 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "2462b0b1-8b07-43c0-8bdc-be40d3e62cee")
+		)
+		(pin "8"
+			(uuid "8061b211-de41-4ea3-b881-3303934a526b")
+		)
+		(pin "5"
+			(uuid "45807393-4300-46db-9b6c-0b8d2e232dde")
+		)
+		(pin "2"
+			(uuid "a0c2f74d-4848-43ce-8d4d-21bac420654f")
+		)
+		(pin "6"
+			(uuid "82ec9060-05e9-4c0e-a9c4-dfd0a77c38ab")
+		)
+		(pin "1"
+			(uuid "e6195f7d-696d-4a3b-93f1-ae365e8977de")
+		)
+		(pin "7"
+			(uuid "ab380baf-f3e9-4769-9f19-64c91fb3cf9e")
+		)
+		(pin "4"
+			(uuid "22bd4f66-de57-41c6-a3ff-9e2001b079ec")
+		)
+		(instances
+			(project ""
+				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -2830,16 +3438,16 @@
 	)
 	(symbol
 		(lib_id "Device:Battery_Cell")
-		(at 196.85 106.68 0)
+		(at 52.07 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "d710175c-0d82-41f5-a26a-c63c79f2f0ea")
+		(uuid "910a3de9-3ccd-4b8a-a47c-83f6059b9da4")
 		(property "Reference" "BT1"
-			(at 200.66 103.5684 0)
+			(at 55.88 132.7784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2847,8 +3455,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Battery_Cell"
-			(at 200.66 106.1084 0)
+		(property "Value" "3.7V"
+			(at 55.88 135.3184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2857,7 +3465,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 196.85 105.156 90)
+			(at 52.07 134.366 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2866,7 +3474,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 196.85 105.156 90)
+			(at 52.07 134.366 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2875,7 +3483,7 @@
 			)
 		)
 		(property "Description" "Single-cell battery"
-			(at 196.85 106.68 0)
+			(at 52.07 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2884,13 +3492,13 @@
 			)
 		)
 		(pin "2"
-			(uuid "d6dca83f-5624-4a4c-87ac-c389c00ff858")
+			(uuid "b462b6cf-a888-4d0b-a477-8f0046dc5cd4")
 		)
 		(pin "1"
-			(uuid "c803a604-0703-4ad9-9409-1b79d35326c4")
+			(uuid "25e68c14-7745-4249-bc31-8706e65b327c")
 		)
 		(instances
-			(project ""
+			(project "coffee-scale"
 				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
 					(reference "BT1")
 					(unit 1)
