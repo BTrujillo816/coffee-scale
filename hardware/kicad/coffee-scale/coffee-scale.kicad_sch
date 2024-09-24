@@ -1278,178 +1278,6 @@
 				)
 			)
 		)
-		(symbol "Device:Battery_Cell"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "BT"
-				(at 2.54 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Battery_Cell"
-				(at 2.54 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 1.524 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 1.524 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Single-cell battery"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "battery cell"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Battery_Cell_0_1"
-				(rectangle
-					(start -2.286 1.778)
-					(end 2.286 1.524)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.524 1.016)
-					(end 1.524 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 0 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.778) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 3.048) (xy 1.778 3.048)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 3.556) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Battery_Cell_1_1"
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:C"
 			(pin_numbers hide)
 			(pin_names
@@ -3658,6 +3486,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 48.26) (xy 195.58 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03e0ac75-e9c5-4b22-9f2b-4b87661b0495")
+	)
+	(wire
+		(pts
 			(xy 62.23 147.32) (xy 80.01 147.32)
 		)
 		(stroke
@@ -3678,6 +3516,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 60.96) (xy 154.94 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16b694c2-99cf-4892-93eb-d56df8afa1d5")
+	)
+	(wire
+		(pts
 			(xy 26.67 52.07) (xy 36.83 52.07)
 		)
 		(stroke
@@ -3695,6 +3543,16 @@
 			(type default)
 		)
 		(uuid "21013cda-9328-493f-a7b2-72ddf53f3787")
+	)
+	(wire
+		(pts
+			(xy 203.2 71.12) (xy 154.94 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "21f07160-169b-4e60-a540-77c298cfbd3d")
 	)
 	(wire
 		(pts
@@ -3725,6 +3583,16 @@
 			(type default)
 		)
 		(uuid "3bb0b547-cd75-43b7-b9fd-f9271aa84fb3")
+	)
+	(wire
+		(pts
+			(xy 193.04 58.42) (xy 154.94 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e23f000-623a-4da6-a015-fb462801df67")
 	)
 	(wire
 		(pts
@@ -3918,6 +3786,16 @@
 	)
 	(wire
 		(pts
+			(xy 193.04 48.26) (xy 193.04 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98e8414e-694e-453d-abe0-fc6afb126dce")
+	)
+	(wire
+		(pts
 			(xy 111.76 142.24) (xy 105.41 142.24)
 		)
 		(stroke
@@ -3945,6 +3823,16 @@
 			(type default)
 		)
 		(uuid "b2eb56b8-95a0-49d4-83ff-67588f7baf21")
+	)
+	(wire
+		(pts
+			(xy 203.2 48.26) (xy 203.2 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4175313-0b52-42b6-b23e-909c6c090441")
 	)
 	(wire
 		(pts
@@ -4085,6 +3973,28 @@
 			(type default)
 		)
 		(uuid "f20015a5-442c-42d7-af9a-4fc40699aa66")
+	)
+	(rectangle
+		(start 36.83 128.905)
+		(end 142.875 173.355)
+		(stroke
+			(width 0)
+			(type dot)
+		)
+		(fill
+			(type none)
+		)
+		(uuid e9a5331d-ebcd-4d55-af21-84dae9e61f84)
+	)
+	(text "LiPo Battery Circuit"
+		(exclude_from_sim no)
+		(at 46.736 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3c145fb5-813b-4cf4-b6b0-594ee33701e2")
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x02")
@@ -5495,76 +5405,6 @@
 			(project "coffee-scale"
 				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
 					(reference "#PWR02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Battery_Cell")
-		(at 54.61 116.84 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "910a3de9-3ccd-4b8a-a47c-83f6059b9da4")
-		(property "Reference" "BT1"
-			(at 58.42 113.7284 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "3.7V"
-			(at 58.42 116.2684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 54.61 115.316 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 54.61 115.316 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single-cell battery"
-			(at 54.61 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b462b6cf-a888-4d0b-a477-8f0046dc5cd4")
-		)
-		(pin "1"
-			(uuid "25e68c14-7745-4249-bc31-8706e65b327c")
-		)
-		(instances
-			(project "coffee-scale"
-				(path "/26376108-b2bd-4c81-9164-5810df14cd80"
-					(reference "BT1")
 					(unit 1)
 				)
 			)
