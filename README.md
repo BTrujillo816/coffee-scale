@@ -30,7 +30,7 @@ This project was made possible by borrowing from great designs, including:
 
 ## Author
 
-Written by Brandon Trujillo and Miguel Takinan 2024
+Written by Brandon Trujillo and Miguel Takinan, 2024
 
 ## License
 
