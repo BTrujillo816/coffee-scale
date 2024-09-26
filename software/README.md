@@ -1,3 +1,3 @@
-# FitT Software
+# Digital Coffee Scale Software
 
-STM32 firmware project with MX settings
+ESP32-S3 firmware project
