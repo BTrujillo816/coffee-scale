@@ -1,1 +1,1 @@
-# FitT KiCad Project
+# Digital Coffee Scale KiCad Project

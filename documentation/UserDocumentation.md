@@ -1,3 +1,3 @@
-# FitT User Manual
+# Digital Coffee Scale User Manual
 
 ...
