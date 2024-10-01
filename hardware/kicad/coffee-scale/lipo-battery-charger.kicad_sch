@@ -1759,7 +1759,7 @@
 			(uuid "dc53a96a-bb16-4f09-a9bf-0532c5ebc3a8")
 		)
 		(instances
-			(project ""
+			(project "coffee-scale"
 				(path "/26376108-b2bd-4c81-9164-5810df14cd80/bbe8c00d-2680-440a-955f-338aa584fa4e"
 					(reference "J1")
 					(unit 1)
