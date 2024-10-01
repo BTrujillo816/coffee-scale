@@ -75,5 +75,4 @@ eInk Display (UC8151d)
 HX711
 
 - Sampling rate
-
 - Gain selection
