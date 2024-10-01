@@ -1,21 +1,20 @@
-Write up which microcontrollers you considered, and which you chose [30].
+### Microcontroller Options
 
 - ESP32-S3
 - Arduino
 
-Show pros and cons [10].
+### Pros and Cons
 
 - ESP32-S3
 
   - Pros
-    - WiFi
-    - Bluetooth
+    - IoT Capability (Bluetooth and Wi-Fi)
     - Arduino IDE compatible
     - Greater processing speed
+    - Sleep modes
   - Cons
     - More expensive than ATMEGA328PB-MU
     - Smaller operational voltage range (2.2 to 3.6V)
-
 - ATMEGA328PB-MU
 
   - Pros
@@ -24,30 +23,48 @@ Show pros and cons [10].
     - Lower power draw
 
   - Cons
-    - No WiFi without external module
+    - No Wi-Fi without external module
     - No Bluetooth capability without external module
 
-Describe what lead you to this decision [10]
+### Decision Factors
 
-- We decided to use an ESP32-S3 primarily because of its IoT capabilities (WiFi and Bluetooth compatibility) and its compatibility with the Arduino IDE.
+We decided to use an ESP32-S3 primarily because of its IoT capabilities (Wi-Fi and Bluetooth compatibility) and its compatibility with the Arduino IDE.
 
-  
+### Microcontroller Resources
 
-Show a plan of the resources you are going to use from your microcontroller, and how [30].	
+Built-in Peripherals
 
-- Connectivity
-  - SPI
-    - eInk Display
-  - PWM
-    - eInk Display
-  - RTC
-    - Sleep mode
-  - GPIO
-    - Pushbuttons
-    - LEDs
-    - HX711
+- PWM
+  - eInk Display
+- RTC
+  - External Wakeup
 
-Show parameters you already know or have to determine, for instance duty/cycle and frequency settings for a timer that generates a PWM signal [20]
+Connectivity	
+
+- SPI
+  - eInk Display
+- BLE
+  - App connectivity/data collection
+- Wi-Fi
+  - App connectivity/data collection
+
+Memory Planning
+
+- Calibration settings
+
+GPIO
+
+- Pushbuttons
+
+- LEDs
+
+- HX711
+
+Power supply plan
+
+- Sleep modes
+
+### Parameters
 
 eInk Display (UC8151d)
 
@@ -60,7 +77,3 @@ HX711
 - Sampling rate
 
 - Gain selection
-
-​            
-
-​          
