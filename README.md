@@ -9,7 +9,7 @@ This digital coffee scale will display weight measurements, flow rate, and inclu
 ## Repo Layout
 
 - `hardware` KiCad project with schematic, pcb layout, plots, drawings
-- `software` STM32 firmware and MX setup
+- `software` ESP32 firmware and Arduino IDE setup
 - `documentation` Technical documentation and user manual
 - `logbook` Markdown files for progress updates
 
