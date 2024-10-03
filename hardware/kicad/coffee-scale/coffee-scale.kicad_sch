@@ -6,7 +6,7 @@
 	(paper "A4")
 	(lib_symbols)
 	(sheet
-		(at 166.37 40.64)
+		(at 120.65 40.64)
 		(size 25.4 19.05)
 		(fields_autoplaced yes)
 		(stroke
@@ -18,7 +18,7 @@
 		)
 		(uuid "8094e23a-b836-4785-8c2b-684dde8ef917")
 		(property "Sheetname" "ESP32-S3"
-			(at 166.37 39.9284 0)
+			(at 120.65 39.9284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27,7 +27,7 @@
 			)
 		)
 		(property "Sheetfile" "ESP32-S3.kicad_sch"
-			(at 166.37 60.2746 0)
+			(at 120.65 60.2746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44,7 +44,7 @@
 		)
 	)
 	(sheet
-		(at 225.425 33.655)
+		(at 180.975 35.56)
 		(size 27.94 15.24)
 		(fields_autoplaced yes)
 		(stroke
@@ -56,7 +56,7 @@
 		)
 		(uuid "9304e9ee-70a9-4960-8bba-57e6001e8c58")
 		(property "Sheetname" "eInk Display"
-			(at 225.425 32.9434 0)
+			(at 180.975 34.8484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -65,7 +65,7 @@
 			)
 		)
 		(property "Sheetfile" "eInkDisplay.kicad_sch"
-			(at 225.425 49.4796 0)
+			(at 180.975 51.3846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -82,7 +82,7 @@
 		)
 	)
 	(sheet
-		(at 179.07 104.14)
+		(at 119.38 81.915)
 		(size 84.455 47.625)
 		(fields_autoplaced yes)
 		(stroke
@@ -94,7 +94,7 @@
 		)
 		(uuid "bbe8c00d-2680-440a-955f-338aa584fa4e")
 		(property "Sheetname" "Lipo Battery Charger"
-			(at 179.07 103.4284 0)
+			(at 119.38 81.2034 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -103,7 +103,7 @@
 			)
 		)
 		(property "Sheetfile" "lipo-battery-charger.kicad_sch"
-			(at 179.07 152.3496 0)
+			(at 119.38 130.1246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
