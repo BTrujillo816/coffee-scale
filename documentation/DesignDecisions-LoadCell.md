@@ -1,4 +1,4 @@
-# Load Cell + HX711
+# Load Cell + HX711 Design Decisions
 
 ## Calculations
 
@@ -14,17 +14,21 @@ $$V_{OUT}=V_{S}\times V_{E}$$
 
 ### HX711
 
-##### Full Scale Input Differential Voltage (FSR)
+#### Full Scale Input Differential Voltage (FSR)
 
 - Gain of 128: $\pm 20mV$
 - Gain of 64: $\pm 40mV$
 - Gain of 32: $\pm 80mV$
 
-##### ADC Step Size
+#### ADC Step Size
 
 The data output from the ADC is a 24-bit 2's complement value.
 
 ADC Step Size $= \frac{FSR\times2}{2^{24}}$
+
+#### Saturation
+
+[In Progress]
 
 ## Example Situation
 
@@ -41,6 +45,8 @@ $V_{OUT}=\frac{500}{1000}\times100=50\space mV$
 If the input signal into the HX711 were to exceed these the Full Scale Input Differential Voltage, the output from the HX711 would be saturated.
 
 $50 \space mV$ is beyond the range of $\pm 20mV$ and $\pm 40mV$; therefore, the only appropriate gain value to use is 32, which gives a range of $\pm 80mV$
+
+
 
 
 
