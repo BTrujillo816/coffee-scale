@@ -2,7 +2,7 @@
 
 ## Guides
 1. [Automatic vs Manual Testing](https://www.geeksforgeeks.org/software-engineering-differences-between-manual-and-automation-testing/)
-2. [Given-When-Then](https://brettstables.com/2020/05/03/given-when-then-testing-syntax/)
+2. [Given-When-Then](https://martinfowler.com/bliki/GivenWhenThen.html)
 
 ## Test
 1. Power and Auto-off Functionality
