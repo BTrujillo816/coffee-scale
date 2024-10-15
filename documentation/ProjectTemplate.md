@@ -16,7 +16,8 @@
   - Makes sounds
 
 # Scenario
-# # User Interaction Stories
+## User Interaction Stories
+
 - Unboxing
   - Foam to protect pressure sensor
 - Using
@@ -54,7 +55,8 @@
       - Starts when weight is above a certain amount
     - Automatically stores brew parameters
 
-# # User Interface
+## User Interface
+
 - Display
   - LCD
 - Buttons
