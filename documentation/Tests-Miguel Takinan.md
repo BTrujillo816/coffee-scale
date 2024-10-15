@@ -1,6 +1,6 @@
 # Test Criterias by Miguel Takinan
 
-## Websites
+## Guides
 [Automatic vs Manual Testing](https://www.geeksforgeeks.org/software-engineering-differences-between-manual-and-automation-testing/)
 [Given-When-Then](https://brettstables.com/2020/05/03/given-when-then-testing-syntax/)
 
