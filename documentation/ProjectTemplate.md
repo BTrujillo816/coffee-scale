@@ -79,7 +79,7 @@
   - Batteries are easily swapped
     - Alternatively, battery is chargeable
 - On/off switch works as intended
-- Modes are easily switched betwen
+- Modes are easily switched between
 
 # Parameters
 ## Technical
