@@ -44,7 +44,7 @@ long ReadConversion(byte ConversionMode)
   for (index = 0; index < 24; index++)
   {
     digitalWrite(PD_SCK, HIGH);
-    ConversionData =  (ConversionData << 1) & digitalRead(DOUT);
+    ConversionData =  (ConversionData << 1) | digitalRead(DOUT);
     digitalWrite(PD_SCK, LOW);
   }
   
