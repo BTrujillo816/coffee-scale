@@ -9,20 +9,22 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 5.08 21.59 0)
+			(property "Reference" "U2"
+				(at 2.1941 -20.32 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "HX711"
-				(at 7.62 19.05 0)
+				(at 2.1941 -22.86 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" "Package_SO:SOP-16_3.9x9.9mm_P1.27mm"
@@ -44,7 +46,7 @@
 				)
 			)
 			(property "Description" "24-Bit Analog-to-Digital Converter (ADC) for Weight Scales"
-				(at 0 0 0)
+				(at -1.27 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -319,7 +321,7 @@
 					)
 				)
 				(pin input line
-					(at -12.7 -2.54 0)
+					(at -12.7 0 0)
 					(length 2.54)
 					(name "INA-"
 						(effects
@@ -337,7 +339,7 @@
 					)
 				)
 				(pin input line
-					(at -12.7 0 0)
+					(at -12.7 -2.54 0)
 					(length 2.54)
 					(name "INA+"
 						(effects
@@ -6126,7 +6128,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "945e73aa-f504-444b-abcf-e34d27327f2f")
+			(uuid "945e73aa-f504-444b-abcf-e34d27327f30")
 		)
 		(instances
 			(project ""
@@ -6422,7 +6424,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "945e73aa-f504-444b-abcf-e34d27327f2f")
+			(uuid "945e73aa-f504-444b-abcf-e34d27327f31")
 		)
 		(instances
 			(project ""
@@ -7482,10 +7484,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2e826bbf-265b-41cd-a0be-d957fd644595")
+			(uuid "2e826bbf-265b-41cd-a0be-d957fd644596")
 		)
 		(pin "2"
-			(uuid "51344b4f-8925-42e3-8491-d9537acfd21e")
+			(uuid "51344b4f-8925-42e3-8491-d9537acfd21f")
 		)
 		(instances
 			(project ""
@@ -8121,7 +8123,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "945e73aa-f504-444b-abcf-e34d27327f2f")
+			(uuid "945e73aa-f504-444b-abcf-e34d27327f32")
 		)
 		(instances
 			(project ""
@@ -8322,10 +8324,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "2e826bbf-265b-41cd-a0be-d957fd644595")
+			(uuid "2e826bbf-265b-41cd-a0be-d957fd644597")
 		)
 		(pin "2"
-			(uuid "51344b4f-8925-42e3-8491-d9537acfd21e")
+			(uuid "51344b4f-8925-42e3-8491-d9537acfd220")
 		)
 		(instances
 			(project ""
@@ -8795,7 +8797,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "8c2a363c-a013-4aca-b16a-9562378431b5")
+			(uuid "8c2a363c-a013-4aca-b16a-9562378431b6")
 		)
 		(instances
 			(project ""
@@ -8996,7 +8998,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "945e73aa-f504-444b-abcf-e34d27327f2f")
+			(uuid "945e73aa-f504-444b-abcf-e34d27327f33")
 		)
 		(instances
 			(project ""
@@ -9593,7 +9595,7 @@
 			)
 		)
 		(property "Description" "24-Bit Analog-to-Digital Converter (ADC) for Weight Scales"
-			(at 111.76 43.18 0)
+			(at 110.49 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
