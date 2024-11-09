@@ -386,22 +386,6 @@
     [
       "26376108-b2bd-4c81-9164-5810df14cd80",
       "Root"
-    ],
-    [
-      "bbe8c00d-2680-440a-955f-338aa584fa4e",
-      "Lipo Battery Charger"
-    ],
-    [
-      "d956f099-1e14-4ab8-b2d4-b5ae7171b54d",
-      "HX711 & Load Cell"
-    ],
-    [
-      "9304e9ee-70a9-4960-8bba-57e6001e8c58",
-      "eInk Display"
-    ],
-    [
-      "8094e23a-b836-4785-8c2b-684dde8ef917",
-      "ESP32-S3"
     ]
   ],
   "text_variables": {}
