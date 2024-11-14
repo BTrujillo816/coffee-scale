@@ -7478,7 +7478,7 @@
 	(text_box "Stage 3: Microcontroller\n"
 		(exclude_from_sim no)
 		(at 137.16 13.97 0)
-		(size 77.47 100.33)
+		(size 77.47 100.838)
 		(stroke
 			(width 0)
 			(type default)
@@ -7541,7 +7541,7 @@
 		)
 		(uuid "b5e5200b-dd27-4ffa-84ee-11957bdb3a12")
 	)
-	(text_box "Stage 4: Display"
+	(text_box "Stage 4: Output"
 		(exclude_from_sim no)
 		(at 217.17 13.97 0)
 		(size 65.278 70.612)
