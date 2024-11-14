@@ -35,7 +35,7 @@ unsigned long interval = 1000;      // 1 second interval for the timer
 bool timerRunning = false;          // Timer state
 unsigned long timerStartMillis = 0; // Timer start time
 unsigned long lastActivityMillis = 0; // Last activity time
-const unsigned long sleepTimeout = 60000; // 1 minute timeout for sleep
+const unsigned long sleepTimeout = 30000; // 30 seconds timeout for sleep
 
 RTC_DATA_ATTR int bootCount = 0; // Keep track of reboots during deep sleep
 
@@ -82,10 +82,10 @@ void loop() {
   }
   
   // Don't go to sleep if the weight is above 1 gram or if the timer is running
-  if ((weight > 1 || timerRunning) && millis() - lastActivityMillis > sleepTimeout) {
-    lastActivityMillis = millis(); // Reset activity timer
+  if ((weight > 1 || timerRunning)) {
+    lastActivityMillis = millis(); // Reset activity timer when weight is detected or timer is running
   }
-  
+
   // Check if Tare button is pressed
   if (digitalRead(buttonTarePin) == LOW) {
     scale.tare();  // Reset the scale to 0
