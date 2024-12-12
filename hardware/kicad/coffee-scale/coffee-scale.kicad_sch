@@ -10751,6 +10751,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "AP2112R5-3.3TRG1"
+			(at 113.03 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "233ecf20-6f1d-4f3e-a22a-ba1f20193c62")
 		)
@@ -10825,6 +10834,15 @@
 		)
 		(property "Description" "-3A Id, -20V Vds, P-Channel MOSFET, SOT-23"
 			(at 82.042 141.986 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "DMG2301L-7"
+			(at 81.28 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11378,6 +11396,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "BSS138"
+			(at 261.62 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "a35fcb29-92a0-4b82-89b3-9e08285ee2d6")
 		)
@@ -11654,6 +11681,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "ESP32-S3-WROOM-1-N16"
+			(at 179.07 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "8"
 			(uuid "03b71d9a-ef3b-498c-801b-4c19ab296178")
 		)
@@ -11884,6 +11920,15 @@
 			)
 		)
 		(property "Description" "0.7A Ic, 20V Vce, Low Voltage High Current PNP Transistor, TO-92"
+			(at 78.74 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "S8550"
 			(at 78.74 35.56 0)
 			(effects
 				(font
@@ -12923,6 +12968,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "PMEG4050EP,115"
+			(at 77.47 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "0b600415-89fd-4126-8e35-aecba32e5bdf")
 		)
@@ -13707,7 +13761,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-123"
+		(property "Footprint" "Diode_SMD:D_SOD-128"
 			(at 259.08 41.91 0)
 			(effects
 				(font
@@ -13727,6 +13781,15 @@
 		)
 		(property "Description" "Schottky diode, filled shape"
 			(at 259.08 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "DMG2301L-7 "
+			(at 259.08 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14408,6 +14471,15 @@
 				(hide yes)
 			)
 		)
+		(property "MPN" "USB4085-GF-A"
+			(at 25.4 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "S1"
 			(uuid "144b1edd-60d7-4f43-91bc-b009dea44c18")
 		)
@@ -15046,6 +15118,15 @@
 		)
 		(property "Description" "24-Bit Analog-to-Digital Converter (ADC) for Weight Scales"
 			(at 111.76 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "HX711"
+			(at 113.03 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
