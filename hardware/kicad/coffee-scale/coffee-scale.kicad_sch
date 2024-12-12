@@ -10724,7 +10724,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-89-5_Handsoldering"
 			(at 110.998 149.098 0)
 			(effects
 				(font
@@ -11862,7 +11862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 73.66 33.655 0)
 			(effects
 				(font
@@ -12888,7 +12888,7 @@
 				)
 			)
 		)
-		(property "Value" "MBR540"
+		(property "Value" "~"
 			(at 77.724 171.196 0)
 			(effects
 				(font
@@ -12896,7 +12896,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
+		(property "Footprint" "Diode_SMD:D_SOD-128"
 			(at 77.47 169.545 0)
 			(effects
 				(font
