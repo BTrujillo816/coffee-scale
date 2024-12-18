@@ -8709,7 +8709,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_Omron_B3FS-105xP"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3S-1100"
 			(at 27.94 57.15 0)
 			(effects
 				(font
@@ -8800,6 +8800,15 @@
 			)
 		)
 		(property "Description" "Single cell, Li-Ion/Li-Po charge management controller, 4.50V, Open-Drain Status Output, in SOT23-5 package"
+			(at 99.06 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "MCP73832T-5ACI/OT"
 			(at 99.06 115.57 0)
 			(effects
 				(font
@@ -9110,7 +9119,7 @@
 		(dnp no)
 		(uuid "252eda22-a5a7-433a-8f6d-0eed544f76b5")
 		(property "Reference" "R8"
-			(at 78.994 54.61 0)
+			(at 79.756 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9118,7 +9127,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 78.994 57.15 0)
+			(at 79.756 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10258,7 +10267,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_Omron_B3FS-105xP"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3S-1000"
 			(at 27.94 49.53 0)
 			(effects
 				(font
@@ -11089,7 +11098,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10μF"
+		(property "Value" "10uF"
 			(at 48.26 176.53 0)
 			(effects
 				(font
@@ -11509,7 +11518,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10μF"
+		(property "Value" "10uF"
 			(at 88.646 181.61 0)
 			(effects
 				(font
@@ -12527,7 +12536,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10μF"
+		(property "Value" "10uF"
 			(at 59.69 176.53 0)
 			(effects
 				(font
@@ -12865,7 +12874,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10μF"
+		(property "Value" "10uF"
 			(at 128.016 181.61 0)
 			(effects
 				(font
@@ -14544,7 +14553,7 @@
 		(dnp no)
 		(uuid "ea816561-8672-4990-8221-740b23529918")
 		(property "Reference" "R7"
-			(at 78.994 44.704 0)
+			(at 79.756 44.704 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14552,7 +14561,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 78.994 47.244 0)
+			(at 79.756 47.244 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14696,7 +14705,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_SPST_Omron_B3FS-105xP"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_B3S-1000"
 			(at 27.94 41.91 0)
 			(effects
 				(font
