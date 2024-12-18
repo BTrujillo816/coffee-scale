@@ -5818,10 +5818,6 @@
 		(uuid "ee1676cf-74d9-4a65-8d7d-52c5aea339c7")
 	)
 	(no_connect
-		(at 156.21 87.63)
-		(uuid "0a9fb871-ede3-4d1e-831b-a0d04de07c68")
-	)
-	(no_connect
 		(at 201.93 46.99)
 		(uuid "0b450f58-a47c-4ac2-9a77-4556bdfb392a")
 	)
