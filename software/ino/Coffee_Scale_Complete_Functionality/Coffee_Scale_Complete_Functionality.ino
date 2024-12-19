@@ -43,6 +43,7 @@ RTC_DATA_ATTR int bootCount = 0; // Keep track of reboots during deep sleep
 float lastWeight = 0.0;
 float flowRate = 0.0;
 unsigned long lastFlowTime = 0;
+float lastDisplayWeight = 0.0;
 
 void setup() {
   // Initialize Serial Monitor
@@ -76,7 +77,7 @@ void loop() {
   // Flow rate calculation (grams per second)
   unsigned long currentMillis = millis();
   if (currentMillis - lastFlowTime >= 1000) {  // Update every second
-    flowRate = (weight - lastWeight);  // Flow rate is the difference in weight over 1 second
+    flowRate = abs(weight - lastWeight);  // Flow rate is the difference in weight over 1 second
     lastWeight = weight;  // Save the current weight for the next calculation
     lastFlowTime = currentMillis;
   }
@@ -115,13 +116,29 @@ void loop() {
   display.clearDisplay();
   display.setCursor(0, 0);
   display.print("Weight: ");
-  display.print(weight, 1);  // Display weight with 1 decimal place
+  if (weight > 1.0){
+    if (flowRate > 0.3){
+    display.print(weight, 1);  // Display weight with 1 decimal place
+    lastDisplayWeight = weight;
+    }
+    else{
+      display.print(lastDisplayWeight, 1);
+    }
+  }
+  else{
+    display.print(0.0, 1);
+  }
   display.print(" g");
 
   // Display flow rate (grams per second)
   display.setCursor(0, 16);
   display.print("Flow Rate: ");
-  display.print(flowRate, 2);  // Display flow rate with 2 decimal places
+  if (flowRate > 0.5){
+    display.print(flowRate, 1);  // Display flow rate with 2 decimal places
+  }
+    else{
+      display.print(0.0, 1);
+    }
   display.print(" g/s");
 
   // Display the timer if running
