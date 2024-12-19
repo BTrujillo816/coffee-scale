@@ -26,27 +26,26 @@ const int LOADCELL_SCK_PIN = 18;
 HX711 scale;
 
 // Button pins
-const int buttonTarePin = 16;
-const int buttonTimerPin = 15;
-const int buzzerPin = 14;
-const int wakeUpPin = 12;
+const int buttonTarePin = 16;  // Button 1: Tare
+const int buttonTimerPin = 15; // Button 2: Timer Start/Stop
+const int buzzerPin = 14;      // Active buzzer pin
+const int wakeUpPin = 12;      // GPIO 12 for wake-up
 
 // WiFi credentials
-#define WIFI_SSID "Fios-2ykMB"
-#define WIFI_PASSWORD "fig75noted22sew"
+#define WIFI_SSID "ESP32_AP"
+#define WIFI_PASSWORD "12345678"
 
 WebServer server(80);
 
 // Variables
-unsigned long previousMillis = 0;
-unsigned long interval = 1000;
-bool timerRunning = false;
-unsigned long timerStartMillis = 0;
-unsigned long lastActivityMillis = 0;
-const unsigned long sleepTimeout = 30000;
-bool wifiConnected = false;
+unsigned long previousMillis = 0;  // Timer
+unsigned long interval = 1000;      // 1 second interval for the timer
+bool timerRunning = false;          // Timer state
+unsigned long timerStartMillis = 0; // Timer start time
+unsigned long lastActivityMillis = 0; // Last activity time
+const unsigned long sleepTimeout = 30000; // 30 seconds timeout for sleep
 
-RTC_DATA_ATTR int bootCount = 0;
+RTC_DATA_ATTR int bootCount = 0; // Keep track of reboots during deep sleep
 
 // Flow rate variables
 float lastWeight = 0.0;
@@ -54,15 +53,199 @@ float flowRate = 0.0;
 unsigned long lastFlowTime = 0;
 float lastDisplayWeight = 0.0;
 
-// Function to print the reason for wake-up
-void print_wakeup_reason() {
-  esp_sleep_wakeup_cause_t wakeup_reason = esp_sleep_get_wakeup_cause();
-  switch (wakeup_reason) {
-    case ESP_SLEEP_WAKEUP_EXT0: Serial.println("Wakeup caused by external signal using RTC_IO"); break;
-    case ESP_SLEEP_WAKEUP_TIMER: Serial.println("Wakeup caused by timer"); break;
-    default: Serial.printf("Wakeup was not caused by deep sleep: %d\n", wakeup_reason); break;
-  }
+void handleRoot() {
+  String html = R"rawliteral(
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>ESP32 Scale Data</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f9;
+        }
+        h1 {
+          font-size: 2em;
+          margin-top: 20px;
+        }
+        p {
+          font-size: 1.5em;
+          margin: 20px 0;
+        }
+        .data {
+          font-size: 2em;
+          font-weight: bold;
+          color: #333;
+        }
+      </style>
+      <script>
+        async function fetchData() {
+          const response = await fetch('/data');
+          const data = await response.json();
+          document.getElementById('weight').textContent = data.weight + ' g';
+          document.getElementById('flowRate').textContent = data.flowRate + ' g/s';
+          document.getElementById('timer').textContent = data.timer !== null ? data.timer : 'N/A';
+        }
+        setInterval(fetchData, 1000); // Fetch data every second
+      </script>
+    </head>
+    <body onload="fetchData()">
+      <h1>ESP32 Scale Data</h1>
+      <p>Weight: <span id="weight" class="data">-- g</span></p>
+      <p>Flow Rate: <span id="flowRate" class="data">-- g/s</span></p>
+      <p>Timer: <span id="timer" class="data">Stopped</span></p>
+    </body>
+    </html>
+  )rawliteral";
+  server.send(200, "text/html", html);
 }
+
+
+
+void setup() {
+  // Initialize Serial Monitor
+  Serial.begin(57600);
+  delay(1000);
+  Serial.println("HX711 Demo");
+
+  // Wake-up cause check
+  print_wakeup_reason();
+
+  // Initialize the display and scale
+  initializeDisplay();
+  initializeScale();
+
+  // Initialize buttons and buzzer
+  pinMode(buttonTarePin, INPUT_PULLUP);
+  pinMode(buttonTimerPin, INPUT_PULLUP);
+  pinMode(buzzerPin, OUTPUT);
+
+  // Configure wakeup source on GPIO 12
+  esp_sleep_enable_ext0_wakeup(GPIO_NUM_12, 1); // Wake up when GPIO 12 is HIGH
+
+  // Set up the ESP32 as an Access Point
+  Serial.println("Setting up Access Point...");
+  WiFi.softAP(WIFI_SSID, WIFI_PASSWORD);
+  IPAddress IP = WiFi.softAPIP();
+  Serial.print("AP IP Address: ");
+  Serial.println(IP);
+
+  // Start Web Server
+  server.on("/", handleRoot);
+  server.begin();
+  Serial.println("Web server started on Access Point");
+
+  // Track activity start
+  lastActivityMillis = millis();
+
+  server.on("/data", handleData);
+
+}
+
+void loop() {
+  unsigned long currentMillis = millis();
+
+  // Read weight from scale
+  float weight = scale.get_units(10);
+
+  // Flow rate calculation (grams per second)
+  if (currentMillis - lastFlowTime >= 1000) {  // Update every second
+    flowRate = weight - lastWeight;  // Flow rate is the difference in weight over 1 second
+    lastWeight = weight;  // Save the current weight for the next calculation
+    lastFlowTime = currentMillis;
+  }
+
+  // Don't go to sleep if the weight is above 1 gram or if the timer is running
+  if ((weight > 1 || timerRunning)) {
+    lastActivityMillis = millis(); // Reset activity timer when weight is detected or timer is running
+  }
+
+  // Check if Tare button is pressed
+  if (digitalRead(buttonTarePin) == LOW) {
+    scale.tare();  // Reset the scale to 0
+    beep();
+    displayMessage("Scale Tared");
+    delay(500); // Debounce time to prevent multiple readings
+    lastActivityMillis = millis(); // Reset activity timer
+  }
+
+  // Check if Timer button is pressed
+  if (digitalRead(buttonTimerPin) == LOW) {
+    if (!timerRunning) {
+      timerRunning = true;
+      timerStartMillis = millis();
+      beep();
+      displayMessage("Timer Started");
+    } else {
+      timerRunning = false;
+      beep();
+      displayMessage("Timer Stopped");
+    }
+    delay(500); // Debounce time to prevent multiple readings
+    lastActivityMillis = millis(); // Reset activity timer
+  }
+
+  // OLED and Web Server updates (non-blocking)
+  if (currentMillis - previousMillis >= 100) { // Update display every 100ms
+    previousMillis = currentMillis;
+
+    // Display the weight
+    display.clearDisplay();
+    display.setCursor(0, 0);
+    display.print("Weight: ");
+    if (weight > 1.0) {
+      if (flowRate > 0.3) {
+        display.print(weight, 1);  // Display weight with 1 decimal place
+        lastDisplayWeight = weight;
+      } else {
+        display.print(lastDisplayWeight, 1);
+      }
+    } else {
+      display.print(0.0, 1);
+    }
+    display.print(" g");
+
+    // Display flow rate (grams per second)
+    display.setCursor(0, 16);
+    display.print("Flow Rate: ");
+    if (flowRate > 0.5) {
+      display.print(flowRate, 1);  // Display flow rate with 2 decimal places
+    } else {
+      display.print(0.0, 1);
+    }
+    display.print(" g/s");
+
+    // Display the timer if running
+  if (timerRunning) {
+    unsigned long elapsedTime = millis() - timerStartMillis;
+    unsigned long minutes = elapsedTime / 60000;
+    unsigned long seconds = (elapsedTime % 60000) / 1000;
+
+    display.setCursor(0, 24);
+    display.print("Timer: ");
+    if (minutes < 10) display.print("0");
+    display.print(minutes);
+    display.print(":");
+    if (seconds < 10) display.print("0");
+    display.print(seconds);
+  }
+
+    // Show the display buffer on the screen
+    display.display();
+  }
+
+  // Check for sleep timeout if no weight or activity is detected
+  if (weight <= 1 && !timerRunning && millis() - lastActivityMillis > sleepTimeout) {
+    goToSleep();
+  }
+
+  // Handle Web Server
+  server.handleClient();
+}
+
 
 // Function to initialize the OLED display
 void initializeDisplay() {
@@ -109,150 +292,56 @@ void goToSleep() {
   esp_deep_sleep_start();
 }
 
-// Handle the root web page
-void handleRoot() {
-  String html = "<!DOCTYPE html><html><head><title>Scale Data</title></head><body>";
-  html += "<h1>Scale Data</h1>";
-  html += "<p>Weight: " + String(lastDisplayWeight, 1) + " g</p>";
-  html += "<p>Flow Rate: " + String(flowRate, 1) + " g/s</p>";
-  if (timerRunning) {
-    unsigned long elapsedTime = millis() - timerStartMillis;
-    unsigned long seconds = elapsedTime / 1000;
-    html += "<p>Timer: " + String(seconds) + " s</p>";
-  } else {
-    html += "<p>Timer: Stopped</p>";
-  }
-  html += "</body></html>";
-  server.send(200, "text/html", html);
-}
-
-// Attempt to connect to WiFi with a timeout
-void connectToWiFi() {
-  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
-  Serial.print("Connecting to WiFi");
-  unsigned long startAttemptTime = millis();
-
-  // Try connecting for 10 seconds
-  while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 10000) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  if (WiFi.status() == WL_CONNECTED) {
-    wifiConnected = true;
-    Serial.println("\nConnected to WiFi");
-    Serial.print("IP Address: ");
-    Serial.println(WiFi.localIP());
-    server.on("/", handleRoot);
-    server.begin();
-    Serial.println("HTTP server started");
-  } else {
-    wifiConnected = false;
-    Serial.println("\nFailed to connect to WiFi. Running offline.");
+// Function to print the reason for wake-up
+void print_wakeup_reason() {
+  esp_sleep_wakeup_cause_t wakeup_reason = esp_sleep_get_wakeup_cause();
+  switch (wakeup_reason) {
+    case ESP_SLEEP_WAKEUP_EXT0: Serial.println("Wakeup caused by external signal using RTC_IO"); break;
+    case ESP_SLEEP_WAKEUP_TIMER: Serial.println("Wakeup caused by timer"); break;
+    default: Serial.printf("Wakeup was not caused by deep sleep: %d\n", wakeup_reason); break;
   }
 }
 
-void setup() {
-  Serial.begin(57600);
-  delay(1000);
-  Serial.println("HX711 Demo");
+void handleData() {
+  float weight = scale.get_units(10); // Get the current weight
+  float displayWeight = 0.0;          // To hold the final weight value to display
+  float displayFlowRate = 0.0;        // To hold the final flow rate value to display
 
-  print_wakeup_reason();
-
-  initializeDisplay();
-  initializeScale();
-
-  pinMode(buttonTarePin, INPUT_PULLUP);
-  pinMode(buttonTimerPin, INPUT_PULLUP);
-  pinMode(buzzerPin, OUTPUT);
-
-  esp_sleep_enable_ext0_wakeup(GPIO_NUM_12, 1);
-
-  lastActivityMillis = millis();
-
-  // Attempt to connect to WiFi
-  connectToWiFi();
-}
-
-void loop() {
-  float weight = scale.get_units(10);
-
-  unsigned long currentMillis = millis();
-  if (currentMillis - lastFlowTime >= 1000) {
-    flowRate = abs(weight - lastWeight);
-    lastWeight = weight;
-    lastFlowTime = currentMillis;
-  }
-
-  if ((weight > 1 || timerRunning)) {
-    lastActivityMillis = millis();
-  }
-
-  if (digitalRead(buttonTarePin) == LOW) {
-    scale.tare();
-    beep();
-    displayMessage("Scale Tared");
-    delay(500);
-    lastActivityMillis = millis();
-  }
-
-  if (digitalRead(buttonTimerPin) == LOW) {
-    if (!timerRunning) {
-      timerRunning = true;
-      timerStartMillis = millis();
-      beep();
-      displayMessage("Timer Started");
-    } else {
-      timerRunning = false;
-      beep();
-      displayMessage("Timer Stopped");
-    }
-    delay(500);
-    lastActivityMillis = millis();
-  }
-
-  display.clearDisplay();
-  display.setCursor(0, 0);
-  display.print("Weight: ");
+  // Apply the same logic as used for the OLED display
   if (weight > 1.0) {
-    if (flowRate > 0.3) {
-      display.print(weight, 1);
-      lastDisplayWeight = weight;
+    if (abs(flowRate) > 0.3) {
+      displayWeight = weight;         // Use the current weight
+      lastDisplayWeight = weight;    // Update last displayed weight
     } else {
-      display.print(lastDisplayWeight, 1);
+      displayWeight = lastDisplayWeight; // Use the last known valid weight
     }
-  } else {
-    display.print(0.0, 1);
   }
-  display.print(" g");
 
-  display.setCursor(0, 16);
-  display.print("Flow Rate: ");
   if (flowRate > 0.5) {
-    display.print(flowRate, 1);
-  } else {
-    display.print(0.0, 1);
+    displayFlowRate = flowRate;       // Use the current flow rate
   }
-  display.print(" g/s");
 
+  String timerDisplay = "Stopped";
+  
   if (timerRunning) {
     unsigned long elapsedTime = millis() - timerStartMillis;
-    unsigned long seconds = elapsedTime / 1000;
-    display.setCursor(0, 24);
-    display.print("Timer: ");
-    display.print(seconds);
-    display.print(" s");
+    unsigned long minutes = elapsedTime / 60000;
+    unsigned long seconds = (elapsedTime % 60000) / 1000;
+    timerDisplay = (minutes < 10 ? "0" : "") + String(minutes) + ":" +
+                   (seconds < 10 ? "0" : "") + String(seconds);
   }
 
-  display.display();
-  delay(100);
+  // Construct JSON response
+  String json = "{";
+  json += "\"weight\":" + String(displayWeight, 1) + ",";
+  json += "\"flowRate\":" + String(displayFlowRate, 1) + ",";
+  json += "\"timer\":\"" + timerDisplay + "\"";
+  json += "}";
 
-  if (weight <= 1 && !timerRunning && millis() - lastActivityMillis > sleepTimeout) {
-    goToSleep();
-  }
-
-  // Handle Web Server if connected to WiFi
-  if (wifiConnected) {
-    server.handleClient();
-  }
+  // Send JSON response
+  server.send(200, "application/json", json);
 }
+
+
+
+
