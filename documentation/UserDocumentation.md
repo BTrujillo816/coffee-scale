@@ -7,7 +7,7 @@
 ### Initial Setup
 1. Power
 - Make sure battery is charged. Connect to USB-C if needs charging. 
-- Press any wake up button to turn product on.
+- Press wake up button to turn product on.
 
 2. Calibration
 - Ensure the scale is on a flat surface.
