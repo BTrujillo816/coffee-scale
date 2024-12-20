@@ -19,7 +19,7 @@
 flowchart TD
     A[ESP32] 
     B[Power]
-    A -->C[User Interface] --> D[E-Ink Display] 
+    A -->C[User Interface] --> D[OLED Display] 
     A -->E[Enclosure] --> F[3D Printed Case]
     A -->G[Sensors] --> |HX711|I[Load Cell] 
     B -->K[LiPo]
