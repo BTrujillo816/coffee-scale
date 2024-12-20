@@ -1,0 +1,7 @@
+Order Notes for PCB
+
+Project Name: Coffee Scale PCB
+Dimensions: 71.5 mm x 43.25 mm
+
+Instructions:
+If any errors or discrepancies are identified in the provided files, you have my authorization to make any necessary adjustments to ensure the board works as intended.
